@@ -1,0 +1,81 @@
+.procurar{
+    width: 30px;
+    height: 30px;
+    margin-left: 30px;
+    display: flex;
+}
+
+.procurar2{
+    border: 0px transparent solid;
+    border-radius: 10px;
+}
+.bordaprocurar{
+    border: 1px black solid;
+    width: 250px;
+    border-radius: 10px;
+}
+.lupa{
+    display: flex;
+    width: 20px;
+    margin-left: 35px;
+    margin-top: 5px;
+    height: 20px;
+}
+.bordacpf{
+    border: 1px black solid;
+    margin-right: 10px;
+    width: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0px 5px 5px 0px;
+}
+.bg{
+    background-color: #C4D4E1;
+    color: #fff;
+}
+.bordacpf2{
+    width: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px black solid;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.tamanho{
+    width: 100%;
+    height: 50px;
+}
+
+.shadow{
+    box-shadow: black 20px ;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+.shadow:hover{
+    box-shadow: black 50px;
+
+}
+.copy{
+    margin-top: 0px;
+}
+.texthotel{
+    margin-left: 30px;
+}
+
+.star{
+    width: 15px;
+    height: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.avaliacao{
+    max-width: 300px;
+    text-align: center;
+    display: flex;
+    font-size: 0.7rem;
+}
+
+.todoscard{
+    display: flex;
+    width: 100%;
+}
