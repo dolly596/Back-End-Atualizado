@@ -12,14 +12,14 @@
 <body>
 	<div class="container">
 		<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-			<a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+			<a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
 				<span class="fs-4">Gerenciamento de Hotel</span>
 			</a>
 			<ul class="nav nav-pills">
 				<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
 				<li class="nav-item"><a href="hospede.html" class="nav-link ">Hóspedes</a></li>
-				<li class="nav-item"><a href="quarto.html" class="nav-link active">Quartos</a></li>
-				<li class="nav-item"><a href="reserva.html" class="nav-link">Reservas</a></li>
+				<li class="nav-item"><a href="quarto.html" class="nav-link">Quartos</a></li>
+				<li class="nav-item"><a href="reserva.html" class="nav-link active">Reservas</a></li>
 			</ul>
 		</header>
 
@@ -30,7 +30,6 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th>ID</th>
 						<th>Hospede</th>
 						<th>Quarto</th>
 						<th>Check-in</th>
@@ -48,15 +47,16 @@
 			<h3 id="formTitle">Incluir Reserva</h3>
 			<form id="reservationForm">
 				<input type="hidden" id="reservationid">
+				
 				<div class="mb-3">
 					<label for="reservationguest" class="form-label">Hospede</label>
 					<input type="number" class="form-control" id="reservationguest" required>
 				</div>
-
+				
 				<div class="mb-3">
 					<label for="reservationroom" class="form-label">Quarto</label>
 					<input type="number" class="form-control" id="reservationroom" required>
-
+				</div>
 					<div class="mb-3">
 						<label for="reservationcheckin" class="form-label">checkInDate</label>
 						<input type="date" class="form-control" id="reservationcheckin" required>

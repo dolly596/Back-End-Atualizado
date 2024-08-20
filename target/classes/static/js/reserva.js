@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	loadGuests();
+	loadReservation();
 
 	$('#reservationForm').submit(function(event) {
 		event.preventDefault();
@@ -12,14 +12,14 @@ $(document).ready(function() {
 	});
 });
 
-function loadGuests() {
+function loadReservation() {
 	$.getJSON('api/reserva', function(data) {
 		$('#reservationTableBody').empty();
 		data.forEach(reservation => {
 			$('#reservationTableBody').append(
 				`<tr>
-				   <td>${reservation.hospede.nome}</td>
 				   <td>${reservation.quarto.numero}</td>
+				   <td>${reservation.hospede.nome}</td>
                    <td>${reservation.checkInDate}</td>
                    <td>${reservation.checkOutDate}</td>
                    <td>
@@ -58,8 +58,8 @@ function closeReservationForm() {
 
 function addReservation() {
 	const reservation = {
-		hospede: {id: $('#reservationguest').val()  },
-		quarto: {id: $('#reservationroom').val() },
+		hospede: {id: $('#reservationguest').val() },
+		quarto: {id: $('#reservationroom').val()  },
 		checkInDate:  $('#reservationcheckin').val() ,
 		checkOutDate:  $('#reservationcheckout').val() 
 	};
@@ -69,8 +69,8 @@ function addReservation() {
 		contentType: 'application/json',
 		data: JSON.stringify(reservation),
 		success: function() {
-			closeGuestForm();
-			loadGuests();
+			closeReservationForm();
+			loadReservation();
 		},
 		error: function() {
 			alert('Erro ao adicionar o reserva.');
@@ -78,12 +78,12 @@ function addReservation() {
 	});
 }
 
-function updateGuest(id) {
+function updateReservation(id) {
 	const reservation = {
-		guest: {id: $('#reservationguest').val() },
-		room: {id: $('#reservationroom').val() },
-		checkInDate: {id: $('#reservationcheckin').val() },
-		checkOutDate: {id: $('#reservationcheckout').val() }
+		hospede: {id: $('#reservationguest').val() },
+		quarto: {id: $('#reservationroom').val() },
+		checkInDate: $('#reservationcheckin').val() ,
+		checkOutDate: $('#reservationcheckout').val() 
 	};
 	$.ajax({
 		url: `api/reserva/${id}`,
@@ -91,8 +91,8 @@ function updateGuest(id) {
 		contentType: 'application/json',
 		data: JSON.stringify(reservation),
 		success: function() {
-			closeGuestForm();
-			loadGuests();
+			closeReservationForm();
+			loadReservation();
 		},
 		error: function() {
 			alert('Erro ao editar a reserva.');
@@ -100,13 +100,13 @@ function updateGuest(id) {
 	});
 }
 
-function deleteGuest(id) {
+function deleteReservation(id) {
 	if (confirm('Realmente vai deletar?')) {
 		$.ajax({
 			url: `api/reserva/${id}`,
 			type: 'DELETE',
 			success: function() {
-				loadGuests();
+				loadReservation();
 			},
 			error: function() {
 				alert('Erro ao deletar a reserva.');
